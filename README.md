@@ -1,3 +1,6 @@
-# Data-Analysis-of-Rainfall-in-Europe-and-Turkey
+</p>
+</div> 
 
-Analyzing rainfall data trends and anomalies in Europe and Turkey using NOAA datasets with scripts written in the Ferret programming language.
+# About The Project
+
+  Analyzing rainfall data trends and anomalies in Europe and Turkey using NOAA datasets with scripts written in the Ferret programming language.
