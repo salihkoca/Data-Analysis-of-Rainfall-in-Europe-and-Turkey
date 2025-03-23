@@ -1,0 +1,92 @@
+ ! NOAA/PMEL TMAP
+ ! FERRET v7.2 (optimized)
+ ! Linux 2.6.32-696.3.2.el6.x86_64 64-bit - 07/11/17
+ ! 27-May-23 17:08     
+
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+set viewport ul
+let aralik = precip[l=12:516:12,x=-20:60,y=20:75]
+let ocak = precip[l=13:517:12,x=-20:60,y=20:75]
+let subat = precip[l=14:518:12,x=-20:60,y=20:75]
+let arakort = aralik[l=@ave]
+let ocakort = ocak[l=@ave]
+let subatort = subat[l=@ave]
+let kis = (arakort + ocakort + subatort) / 3
+let son10a = precip[l=396:516:12,x=-20:60,y=20:75]
+let son10o = precip[l=397:517:12,x=-20:60,y=20:75]
+let son10s = precip[l=398:518:12,x=-20:60,y=20:75]
+let son10ao = son10a[l=@ave]
+let son10oo = son10o[l=@ave]
+let son10so = son10s[l=@ave]
+let son10kisort = (son10ao + son10oo + son10so ) / 3
+shade/nolab/pal=centered_diff/level=(-inf)(-1,1,0.05)(inf) son10kisort - kis
+fill/nolab/over/pal=centered_diff/level=(-inf)(-1,1,0.05)(inf)/x=-20:60/y=20:75 son10kisort - kis
+go focean 5 "blue_light"
+go land 0
+go land_detail 7
+LABEL/nouser 2.5, 4, 0, 0, 0.20 @TS 2011-2021 Avrupa Kis Yagis Anomalisi
+set viewport ur
+let mart = precip[l=15:519:12,x=-20:60,y=20:75]
+let ni = precip[l=16:520:12,x=-20:60,y=20:75]
+let may = precip[l=17:521:12,x=-20:60,y=20:75]
+let martort = mart[l=@ave]
+let niort = ni[l=@ave]
+let mayort = may[l=@ave]
+let bahar = (martort + niort + mayort) / 3
+let son10m = precip[l=399:519:12,x=-20:60,y=20:75]
+let son10n = precip[l=400:520:12,x=-20:60,y=20:75]
+let son10may = precip[l=401:521:12,x=-20:60,y=20:75]
+let son10mo = son10m[l=@ave]
+let son10no = son10n[l=@ave]
+let son10mayo = son10may[l=@ave]
+let son10bahort = (son10mo + son10no + son10mayo ) / 3
+shade/nolab/pal=centered_diff/level=(-inf)(-1,1,0.05)(inf) son10bahort - bahar
+fill/nolab/over/pal=centered_diff/level=(-inf)(-1,1,0.05)(inf)/x=-20:60/y=20:75 son10bahort - bahar
+go focean 5 "blue_light"
+go land 0
+go land_detail 7
+LABEL/nouser 2.5, 4, 0, 0, 0.20 @TS 2011-2021 Avrupa ilkbahar Yagis Anomalisi
+set viewport ll
+let haziran = precip[l=18:522:12,x=-20:60,y=20:75]
+let temmuz = precip[l=19:523:12,x=-20:60,y=20:75]
+let agustos = precip[l=20:524:12,x=-20:60,y=20:75]
+let hazort = haziran[l=@ave]
+let temort = temmuz[l=@ave]
+let agustort = agustos[l=@ave]
+let yaz = (hazort + temort + agustort) / 3
+let son10haz = precip[l=402:522:12,x=-20:60,y=20:75]
+let son10tem = precip[l=403:523:12,x=-20:60,y=20:75]
+let son10agus = precip[l=404:524:12,x=-20:60,y=20:75]
+let son10hazo = son10haz[l=@ave]
+let son10temo = son10tem[l=@ave]
+let son10aguso = son10agus[l=@ave]
+let son10yazort = (son10hazo + son10temo + son10aguso ) / 3
+shade/nolab/pal=centered_diff/level=(-inf)(-1,1,0.05)(inf) son10yazort - yaz
+fill/nolab/over/pal=centered_diff/level=(-inf)(-1,1,0.05)(inf)/x=-20:60/y=20:75 son10yazort - yaz
+go focean 5 "blue_light"
+go land 0
+go land_detail 7
+LABEL/nouser 2.5, 4, 0, 0, 0.20 @TS 2011-2021 Avrupa Yaz Yagis Anomalisi
+set viewport lr
+let ey = precip[l=21:525:12,x=-20:60,y=20:75]
+let ek = precip[l=22:526:12,x=-20:60,y=20:75]
+let kas = precip[l=23:527:12,x=-20:60,y=20:75]
+let eyort = ey[l=@ave]
+let ekort = ek[l=@ave]
+let kasort = kas[l=@ave]
+let sonbahar = (eyort + ekort + kasort) / 3
+let son10ey = precip[l=405:525:12,x=-20:60,y=20:75]
+let son10ek = precip[l=406:526:12,x=-20:60,y=20:75]
+let son10kas = precip[l=407:527:12,x=-20:60,y=20:75]
+let son10eyo = son10ey[l=@ave]
+let son10eko = son10ek[l=@ave]
+let son10kaso = son10kas[l=@ave]
+let son10sonort = (son10eyo + son10eko + son10kaso ) / 3
+shade/nolab/pal=centered_diff/level=(-inf)(-1,1,0.05)(inf) son10sonort - sonbahar
+fill/nolab/over/pal=centered_diff/level=(-inf)(-1,1,0.05)(inf)/x=-20:60/y=20:75 son10sonort - sonbahar
+go focean 5 "blue_light"
+go land 0
+go land_detail 7
+LABEL/nouser 2.5, 4, 0, 0, 0.20 @TS 2011-2021 Avrupa Sonbahar Yagis Anomalisi
+frame/file=AvrupaAnomali.gif

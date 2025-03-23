@@ -1,0 +1,37 @@
+ ! NOAA/PMEL TMAP
+ ! FERRET v7.2 (optimized)
+ ! Linux 2.6.32-696.3.2.el6.x86_64 64-bit - 07/11/17
+ ! 27-May-23 16:55
+
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+let trocak = precip[l=12:516:12,x=26:45@ave,y=36:42@ave] + precip[l=13:517:12,x=26:45@ave,y=36:42@ave] + precip[l=14:518:12,x=26:45@ave,y=36:42@ave]
+let ort = trocak / 3
+plot/vlimits=0:10/color=red/nolabel ort
+lab/nou 4.0 6.8 0 0 0.20 "1980-2021 Turkiye Kis Yagis Ortalamasi"
+frame/file="trkis.gif"
+can data/all
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+let trocak = precip[l=15:519:12,x=26:45@ave,y=36:42@ave] + precip[l=16:520:12,x=26:45@ave,y=36:42@ave] + precip[l=17:521:12,x=26:45@ave,y=36:42@ave]
+let ort = trocak / 3
+plot/vlimits=0:10/color=red/nolabel ort
+lab/nou 4.0 6.8 0 0 0.20 "1980-2021 Turkiye Bahar Yagis Ortalamasi"
+frame/file="trbahar.gif"
+can data/all
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+let trocak = precip[l=18:522:12,x=26:45@ave,y=36:42@ave] + precip[l=19:523:12,x=26:45@ave,y=36:42@ave] + precip[l=20:524:12,x=26:45@ave,y=36:42@ave]
+let ort = trocak / 3
+plot/vlimits=0:10/color=red/nolabel ort
+lab/nou 4.0 6.8 0 0 0.20 "1980-2021 Turkiye Yaz Yagis Ortalamasi"
+frame/file="tryaz.gif"
+can data/all
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+let trocak = precip[l=21:525:12,x=26:45@ave,y=36:42@ave] + precip[l=20:526:12,x=26:45@ave,y=36:42@ave] + precip[l=23:527:12,x=26:45@ave,y=36:42@ave]
+let ort = trocak / 3
+plot/vlimits=0:10/color=red/nolabel ort
+lab/nou 4.0 6.8 0 0 0.20 "1980-2021 Turkiye Sonbahar Yagis Ortalamasi"
+frame/file="trsonbahar.gif"
+can data/all

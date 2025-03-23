@@ -1,0 +1,101 @@
+ ! NOAA/PMEL TMAP
+ ! FERRET v7.2 (optimized)
+ ! Linux 2.6.32-696.3.2.el6.x86_64 64-bit - 07/11/17
+ ! 27-May-23 16:55
+
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+let aralik = precip[l=12:516:12,x=26:45@ave,y=36:42@ave]
+region/x=26:45@ave/y=36:42@ave
+plot/vlimits=-5:5//color=blue/thick=2/nolabel precip[l=396:517:12] - aralik
+lab/nou 4.0 6.8 0 0 0.20 "1980-2021 Aralik Türkiye Yagis Anomalisi"
+frame/file="1tr_aralik.gif"
+can data/all
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+let ocak = precip[l=13:517:12,x=26:45@ave,y=36:42@ave]
+region/x=41/y=40
+plot/vlimits=-5:5//color=blue/thick=2/nolabel precip[l=397:518:12] - ocak
+lab/nou 4.0 6.8 0 0 0.20 "1980-2021 Ocak Türkiye Yagis Anomalisi"
+frame/file="1tr_ocak.gif"
+can data/all
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+let subat = precip[l=14:518:12,x=26:45@ave,y=36:42@ave]
+region/x=41/y=40
+plot/vlimits=-5:5//color=blue/thick=2/nolabel precip[l=398:519:12] - subat
+lab/nou 4.0 6.8 0 0 0.20 "1980-2021 Subat Erzurum Yagis Anomalisi"
+frame/file="1erzurumanomali_subat.gif"
+can data/all
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+let mart = precip[l=15:519:12,x=26:45@ave,y=36:42@ave]
+region/x=41/y=40
+plot/vlimits=-5:5//color=blue/thick=2/nolabel precip[l=16:520:12] - mart
+lab/nou 4.0 6.8 0 0 0.20 "1980-2021 Mart Erzurum Yagis Anomalisi"
+frame/file="1erzurumanomali_mart.gif"
+can data/all
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+let nisan = precip[l=16:520:12,x=26:45@ave,y=36:42@ave]
+region/x=41/y=40
+plot/vlimits=-5:5//color=blue/thick=2/nolabel precip[l=17:521:12] - nisan
+lab/nou 4.0 6.8 0 0 0.20 "1980-2021 Nisan Erzurum Yagis Anomalisi"
+frame/file="1erzurumanomali_nisan.gif"
+can data/all
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+let mayis = precip[l=17:521:12,x=26:45@ave,y=36:42@ave]
+region/x=41/y=40
+plot/vlimits=-5:5//color=blue/thick=2/nolabel precip[l=18:522:12] - mayis
+lab/nou 4.0 6.8 0 0 0.20 "1980-2021 Mayis Erzurum Yagis Anomalisi"
+frame/file="1erzurumanomali_mayis.gif"
+can data/all
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+let haziran = precip[l=18:522:12,x=26:45@ave,y=36:42@ave]
+region/x=41/y=40
+plot/vlimits=-5:5//color=blue/thick=2/nolabel precip[l=19:523:12] - haziran
+lab/nou 4.0 6.8 0 0 0.20 "1980-2021 Haziran Erzurum Yagis Anomalisi"
+frame/file="1erzurumanomali_haziran.gif"
+can data/all
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+let temmuz = precip[l=19:523:12,x=26:45@ave,y=36:42@ave]
+region/x=41/y=40
+plot/vlimits=-5:5//color=blue/thick=2/nolabel precip[l=20:524:12] - temmuz
+lab/nou 4.0 6.8 0 0 0.20 "1980-2021 Temmuz Erzurum Yagis Anomalisi"
+frame/file="1erzurumanomali_temmuz.gif"
+can data/all
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+let agustos = precip[l=20:524:12,x=26:45@ave,y=36:42@ave]
+region/x=41/y=40
+plot/vlimits=-5:5//color=blue/thick=2/nolabel precip[l=21:525:12] - agustos
+lab/nou 4.0 6.8 0 0 0.20 "1980-2021 Agustos Erzurum Yagis Anomalisi"
+frame/file="1erzurumanomali_agustos.gif"
+can data/all
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+let eylul = precip[l=21:525:12,x=26:45@ave,y=36:42@ave]
+region/x=41/y=40
+plot/vlimits=-5:5//color=blue/thick=2/nolabel precip[l=22:526:12] - eylul
+lab/nou 4.0 6.8 0 0 0.20 "1980-2021 Eylul Erzurum Yagis Anomalisi"
+frame/file="1erzurumanomali_eylul.gif"
+can data/all
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+let ekim = precip[l=22:526:12,x=26:45@ave,y=36:42@ave]
+region/x=41/y=40
+plot/vlimits=-5:5//color=blue/thick=2/nolabel precip[l=23:527:12] - ekim
+lab/nou 4.0 6.8 0 0 0.20 "1980-2021 Ekim Erzurum Yagis Anomalisi"
+frame/file="1erzurumanomali_ekim.gif"
+can data/all
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+let kasim = precip[l=23:527:12,x=26:45@ave,y=36:42@ave]
+region/x=41/y=40
+plot/vlimits=-5:5//color=blue/thick=2/nolabel precip[l=24:528:12] - kasim
+lab/nou 4.0 6.8 0 0 0.20 "1980-2021 Kasim Erzurum Yagis Anomalisi"
+frame/file="1erzurumanomali_kasim.gif"
+can data/all

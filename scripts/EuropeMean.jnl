@@ -1,0 +1,64 @@
+ ! NOAA/PMEL TMAP
+ ! FERRET v7.2 (optimized)
+ ! Linux 2.6.32-696.3.2.el6.x86_64 64-bit - 07/11/17
+ ! 27-May-23 16:55     
+
+use /home/salih/Documents/precip.mon.mean.nc
+sh d/f
+set viewport ul
+let aralik = precip[l=12:516:12,x=-20:60,y=20:75]
+let ocak = precip[l=13:517:12,x=-20:60,y=20:75]
+let subat = precip[l=14:518:12,x=-20:60,y=20:75]
+let arakort = aralik[l=@ave]
+let ocakort = ocak[l=@ave]
+let subatort = subat[l=@ave]
+let kis = (arakort + ocakort + subatort) / 3
+shade/nolab/pal=saz2 kis
+fill/nolab/over/pal=saz2//x=-20:60/y=20:75 kis
+go focean 5 "blue_light"
+go land 0
+go land_detail 7
+LABEL/nouser 2.5, 4, 0, 0, 0.20 @TS 1980-2021 Avrupa Kis Ortalama Yagis
+set viewport ur
+let m = precip[l=15:519:12,x=-20:60,y=20:75]
+let n = precip[l=16:520:12,x=-20:60,y=20:75]
+let may = precip[l=17:521:12,x=-20:60,y=20:75]
+let mort = m[l=@ave]
+let nort = n[l=@ave]
+let maort = may[l=@ave]
+let bahar = (mort + nort + maort) / 3
+shade/nolab/pal=saz2 bahar
+fill/nolab/over/pal=saz2/x=-20:60/y=20:75 bahar
+go focean 5 "blue_light"
+go land 0
+go land_detail 7
+LABEL/nouser 2.5, 4, 0, 0, 0.20 @TS 1980-2021 Avrupa ilkbahar Ortalama Yagis
+set viewport ll
+let h = precip[l=18:522:12,x=-20:60,y=20:75]
+let tem = precip[l=19:523:12,x=-20:60,y=20:75]
+let a = precip[l=20:524:12,x=-20:60,y=20:75]
+let hort = h[l=@ave]
+let tort = tem[l=@ave]
+let aort = a[l=@ave]
+let yaz = (hort + tort + aort) / 3
+shade/nolab/pal=saz2 yaz
+fill/nolab/over/pal=saz2/x=-20:60/y=20:75 yaz
+go focean 5 "blue_light"
+go land 0
+go land_detail 7
+LABEL/nouser 2.5, 4, 0, 0, 0.20 @TS 1980-2021 Avrupa Yaz Ortalama Yagis
+set viewport lr
+let e = precip[l=21:525:12,x=-20:60,y=20:75]
+let ek = precip[l=22:526:12,x=-20:60,y=20:75]
+let ka = precip[l=23:527:12,x=-20:60,y=20:75]
+let eort = e[l=@ave]
+let ekort = ek[l=@ave]
+let kort = ka[l=@ave]
+let sonbahar = (eort + ekort + kort) / 3
+shade/nolab/pal=saz2 sonbahar
+fill/nolab/over/pal=saz2/x=-20:60/y=20:75 sonbahar
+go focean 5 "blue_light"
+go land 0
+go land_detail 7
+LABEL/nouser 2.5, 4, 0, 0, 0.20 @TS 1980-2021 Avrupa Sonbahar Ortalama Yagis
+frame/file=40abrupa.gif
